@@ -39,6 +39,7 @@ dependencies:
   get: ^4.6.6
   ifly_speech_recognition: ^1.0.2
   speech_to_text: ^6.6.1
+  flutter_datetime_picker: ^1.5.1
 
 dev_dependencies:
   flutter_test:

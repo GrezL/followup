@@ -31,7 +31,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Demo'),
+        title: const Text('Demo'),
       ),
       body: Center(
         child: Column(
@@ -42,9 +42,9 @@ class MyHomePage extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: (){
                   Navigator.push(context, 
-                  MaterialPageRoute(builder: (context) => CheckingRoute()));
+                  MaterialPageRoute(builder: (context) => CheckingNameRoute()));
                 },
-                child: Text('Checking in'),
+                child: const Text('Checking in'),
 
               )
             ),
@@ -55,7 +55,7 @@ class MyHomePage extends StatelessWidget {
                   Navigator.push(context, 
                   MaterialPageRoute(builder: (context) => ChatPage()));
                 },
-                child: Text('I have a Question'),
+                child: const Text('I have a Question'),
               )
             ),
             Padding(
@@ -65,7 +65,7 @@ class MyHomePage extends StatelessWidget {
                   Navigator.push(context, 
                   MaterialPageRoute(builder: (context) => IMRoute()));
                 },
-                child: Text('Connect to others'),
+                child: const Text('Connect to others'),
               )
             ),
           ],

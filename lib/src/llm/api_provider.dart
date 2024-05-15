@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 
 class ApiProvider extends GetConnect {
 
-  final String apiKey = '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';
+  final String apiKey = '';
   final String baseUrl = 'https://api.openai.com';
   final Duration timeout = Duration(seconds: 30);
 

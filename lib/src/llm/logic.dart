@@ -21,7 +21,7 @@ class ChatLogic extends GetxController {
         final text = data['choices'][0]['message']['content'];
         state.responseStatus(text);
       } else {
-        state.responseStatus('Sorry, I cannot reply this question now.');
+        state.responseStatus(response.statusText ?? 'Sorry, I cannot reply this question now.');
       }
     } catch(error) {
       state.responseStatus(error.toString());
