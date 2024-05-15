@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:followup/follow_up_you.dart';
+import 'local_storage.dart';
 
 class DropdownMenuNode1 extends StatefulWidget {
   const DropdownMenuNode1({super.key});
@@ -168,7 +169,8 @@ class _DatePickerItem extends StatelessWidget {
 
 
 class CheckingNameRoute extends StatelessWidget {
-  const CheckingNameRoute({super.key});
+  CheckingNameRoute({super.key});
+  final nameController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -211,10 +213,10 @@ class CheckingNameRoute extends StatelessWidget {
               width: 370.0,
               // padding: const EdgeInsets.symmetric(vertical: 15.0),
               child: TextFormField(
+                controller: nameController,
                 decoration: const InputDecoration(
                   hintText: "Name",
                   hintStyle: TextStyle(color: Colors.grey,textBaseline: TextBaseline.ideographic,),
-
               
                   prefixIcon: Icon(Icons.person),
                   suffixIcon: Icon(Icons.close),
@@ -238,8 +240,10 @@ class CheckingNameRoute extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 15.0),
               child: ElevatedButton(
                 onPressed: (){
+                  LocalStorage.initSP();
+                  LocalStorage.save("Name", nameController.text);
                   Navigator.push(context, 
-                  MaterialPageRoute(builder: (context) => const CheckingGenderRoute()));
+                  MaterialPageRoute(builder: (context) => CheckingGenderRoute()));
                 },
                 child: const Text('Next'),
               )
@@ -252,7 +256,8 @@ class CheckingNameRoute extends StatelessWidget {
 }
 
 class CheckingGenderRoute extends StatelessWidget {
-  const CheckingGenderRoute({super.key});
+  CheckingGenderRoute({super.key});
+  final genderController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {

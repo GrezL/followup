@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
-import 'package:speech_to_text/speech_recognition_result.dart';
+import 'package:logger/logger.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'llm/logic.dart';
 
 class ChatPage extends StatefulWidget {
-  ChatPage({Key? key}) : super(key: key);
+  const ChatPage({super.key});
 
   @override
   _ChatPageState createState() => _ChatPageState();
@@ -14,17 +13,17 @@ class ChatPage extends StatefulWidget {
 
 class _ChatPageState extends State<ChatPage> {
 
+  final logger = Logger();
   final logic = Get.put(ChatLogic());
   final state = Get.find<ChatLogic>().state;
 
   stt.SpeechToText _speech = stt.SpeechToText();
   bool _isListening = false;
-  String _textSpeech = '';
 
 void onListen() async {
     bool available = await _speech.initialize(
-        onStatus: (val) => print('onStatus: $val'),
-        onError: (val) => print('onError: $val'));
+        onStatus: (val) => logger.d('onStatus: $val'),
+        onError: (val) => logger.d('onError: $val'));
 
     if (!_isListening) {
       if (available) {
@@ -32,7 +31,6 @@ void onListen() async {
           _isListening = false;
           _speech.listen(
             onResult: (val) => setState(() {
-              _textSpeech = val.recognizedWords;
             }),
           );
         });
@@ -101,7 +99,7 @@ void onListen() async {
               ),
             ),
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(12.0),
@@ -111,14 +109,14 @@ void onListen() async {
               child: Row(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.mic),
+                    icon: const Icon(Icons.mic),
                     onPressed: (){}
                   ),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: 'Please enter your question',
                             border: InputBorder.none,
                           ),
@@ -130,7 +128,7 @@ void onListen() async {
                     ),
                   ),
                   IconButton(
-                    icon: Icon(Icons.send),
+                    icon: const Icon(Icons.send),
                     onPressed: state.isRequesting
                         ? null
                         : () {

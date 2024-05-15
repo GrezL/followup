@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:provider/provider.dart';
-import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 import 'llm/logic.dart';
 
@@ -61,7 +59,7 @@ void onListen() async {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text('Question'),
+        title: const Text('Question'),
       ),
       body: GetBuilder<ChatLogic>(
         builder: (context) => Column(
@@ -97,7 +95,7 @@ void onListen() async {
               ),
             ),
             Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.only(
                   topLeft: Radius.circular(12.0),
@@ -107,14 +105,14 @@ void onListen() async {
               child: Row(
                 children: [
                   IconButton(
-                    icon: Icon(Icons.mic),
+                    icon: const Icon(Icons.mic),
                     onPressed: (){}
                   ),
                   Expanded(
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
-                          decoration: InputDecoration(
+                          decoration: const InputDecoration(
                             hintText: 'Please enter',
                             border: InputBorder.none,
                           ),
