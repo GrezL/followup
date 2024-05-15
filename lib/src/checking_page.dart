@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:followup/follow_up_you.dart';
 
 class DropdownMenuNode1 extends StatefulWidget {
   const DropdownMenuNode1({super.key});
@@ -17,14 +18,20 @@ class _DropdownMenuNode1State extends State<DropdownMenuNode1> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        DropdownMenu<String>(
-          menuHeight: 200,
-          initialSelection: data.first,
-          onSelected: _onSelect,
-          dropdownMenuEntries: _buildMenuList(data),
-        ),
-        const SizedBox(height: 8,),
-        Text('Your gender is: $_dropdownValue')
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            const SizedBox(height: 8,), Text('Gender: '),
+            DropdownMenu<String>(
+              menuHeight: 200,
+              initialSelection: data.first,
+              onSelected: _onSelect,
+              dropdownMenuEntries: _buildMenuList(data),
+            ),
+          ],
+        ) 
+        
+        
       ],
     );
   }
@@ -299,9 +306,9 @@ class CheckingBirthdayRoute extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: (){
                   Navigator.push(context, 
-                  MaterialPageRoute(builder: (context) => const CheckingNameRoute()));
+                  MaterialPageRoute(builder: (context) => MyHomePage()));
                 },
-                child: const Text('Next'),
+                child: const Text('Save'),
               )
             ),
           ]
