@@ -169,29 +169,44 @@ class CheckingNameRoute extends StatelessWidget {
       appBar: AppBar (
         automaticallyImplyLeading: true,
         title: const Text('Checking in'),
-        actions: <Widget>[
-          IconButton(onPressed: (){
-            Navigator.pop(context);
-          }, icon: const Icon(Icons.ac_unit))
-        ],
       ),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Container(
+          children: <Widget>[
+            SizedBox(
+              width: 370.0,
+              // padding: const EdgeInsets.symmetric(vertical: 15.0),
+              child: TextFormField(
+                decoration: const InputDecoration(
+                  hintText: "ID",
+                  hintStyle: TextStyle(color: Colors.grey,textBaseline: TextBaseline.ideographic,),
+              
+                  prefixIcon: Icon(Icons.perm_identity),
+                  suffixIcon: Icon(Icons.close),
+
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderSide: BorderSide(
+                      width: 0.0,
+                    ),
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10)),
+                    borderSide: BorderSide(
+                      width: 0.0,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(
               width: 370.0,
               // padding: const EdgeInsets.symmetric(vertical: 15.0),
               child: TextFormField(
                 decoration: const InputDecoration(
                   hintText: "Name",
                   hintStyle: TextStyle(color: Colors.grey,textBaseline: TextBaseline.ideographic,),
-                  labelText: "Name",
-                  labelStyle: TextStyle(color: Colors.blue),
-                  prefixText: "prefix",
-                  prefixStyle: TextStyle(color: Colors.deepPurple),
-                  suffixText: "suf ",
-                  suffixStyle: TextStyle(color: Colors.black),
 
               
                   prefixIcon: Icon(Icons.person),
@@ -210,7 +225,7 @@ class CheckingNameRoute extends StatelessWidget {
                     ),
                   ),
                 ),
-              )
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 15.0),
@@ -238,11 +253,6 @@ class CheckingGenderRoute extends StatelessWidget {
       appBar: AppBar (
         automaticallyImplyLeading: true,
         title: const Text('Checking in'),
-        actions: <Widget>[
-          IconButton(onPressed: (){
-            Navigator.pop(context);
-          }, icon: const Icon(Icons.ac_unit))
-        ],
       ),
       body: Center(
         child: Column(
@@ -278,11 +288,6 @@ class CheckingBirthdayRoute extends StatelessWidget {
       appBar: AppBar (
         automaticallyImplyLeading: true,
         title: const Text('Checking in'),
-        actions: <Widget>[
-          IconButton(onPressed: (){
-            Navigator.pop(context);
-          }, icon: const Icon(Icons.ac_unit))
-        ],
       ),
       body: Center(
         child: Column(

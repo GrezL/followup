@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 
 class IMRoute extends StatelessWidget {
-  IMRoute({Key? key}) : super(key: key);
+  const IMRoute({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar (
         automaticallyImplyLeading: true,
-        title: Text('I have a Question'),
-        actions: <Widget>[
-          IconButton(onPressed: (){
-            Navigator.pop(context);
-          }, icon: Icon(Icons.ac_unit))
+        title: const Text('Communication'),
+         actions: <Widget>[
+          IconButton(onPressed: (){}, icon: const Icon(Icons.camera_alt), tooltip: 'Upload diagnosis',),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.notifications), tooltip: 'Notification',),
         ],
       ),
-      body: Row(
+      body: const Row(
         children: []
       ),
     );

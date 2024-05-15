@@ -31,7 +31,11 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Demo'),
+        title: const Text('Home'),
+        actions: <Widget>[
+          IconButton(onPressed: (){}, icon: const Icon(Icons.camera_alt), tooltip: 'Upload diagnosis',),
+          IconButton(onPressed: () {}, icon: const Icon(Icons.notifications), tooltip: 'Notification',),
+        ],
       ),
       body: Center(
         child: Column(
