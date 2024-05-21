@@ -22,7 +22,7 @@ class _DropdownMenuNode1State extends State<DropdownMenuNode1> {
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            const SizedBox(height: 8,), Text('Gender: '),
+            const SizedBox(height: 8,), const Text('Gender: '),
             DropdownMenu<String>(
               menuHeight: 200,
               initialSelection: data.first,
@@ -31,8 +31,6 @@ class _DropdownMenuNode1State extends State<DropdownMenuNode1> {
             ),
           ],
         ) 
-        
-        
       ],
     );
   }
@@ -187,40 +185,12 @@ class CheckingNameRoute extends StatelessWidget {
               width: 370.0,
               // padding: const EdgeInsets.symmetric(vertical: 15.0),
               child: TextFormField(
-                decoration: const InputDecoration(
-                  hintText: "ID",
-                  hintStyle: TextStyle(color: Colors.grey,textBaseline: TextBaseline.ideographic,),
-              
-                  prefixIcon: Icon(Icons.perm_identity),
-                  suffixIcon: Icon(Icons.close),
-
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    borderSide: BorderSide(
-                      width: 0.0,
-                    ),
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10)),
-                    borderSide: BorderSide(
-                      width: 0.0,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              width: 370.0,
-              // padding: const EdgeInsets.symmetric(vertical: 15.0),
-              child: TextFormField(
                 controller: nameController,
                 decoration: const InputDecoration(
                   hintText: "Name",
                   hintStyle: TextStyle(color: Colors.grey,textBaseline: TextBaseline.ideographic,),
-              
                   prefixIcon: Icon(Icons.person),
                   suffixIcon: Icon(Icons.close),
-
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                     borderSide: BorderSide(

@@ -59,10 +59,10 @@ void onListen() async {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text('Question'),
+        title: const Text('Chat'),
         actions: <Widget>[
           IconButton(onPressed: (){}, icon: const Icon(Icons.camera_alt), tooltip: 'Upload diagnosis',),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.notifications), tooltip: 'Notification',),
+          IconButton(onPressed: (){}, icon: const Icon(Icons.notifications), tooltip: 'Notification',),
         ],
       ),
       body: GetBuilder<ChatLogic>(
